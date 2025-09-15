@@ -27,6 +27,7 @@ pipeline {
             steps {
                 sh '''
                     echo "Deploying to local server..."
+                    sudo mkdir -p /var/www/html/web-app
                     sudo rm -rf /var/www/html/web-app/*
                     sudo cp -r build/* /var/www/html/web-app/
                     sudo systemctl restart apache2 || sudo systemctl restart nginx
