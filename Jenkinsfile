@@ -13,7 +13,7 @@ pipeline {
                 sh '''
                     echo "Building web application..."
                     mkdir -p build
-                    cp -r * build/
+                    cp -r index.html Jenkinsfile build/
                 '''
             }
         }
