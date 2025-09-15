@@ -39,11 +39,12 @@ pipeline {
     }
 
     post {
-        success {
-            githubNotify context: 'CI/CD Pipeline', description: 'Build succeeded!', status: 'SUCCESS'
-        }
-        failure {
-            githubNotify context: 'CI/CD Pipeline', description: 'Build failed!', status: 'FAILURE'
-        }
+    success {
+        echo "Build & Deployment Successful!"
     }
+    failure {
+        echo "Build Failed!"
+    }
+}
+
 }
